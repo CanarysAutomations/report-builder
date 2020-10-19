@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Reflection;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using graphqlimplementation.response;
@@ -32,6 +33,11 @@ namespace graphqlimplementation
             string Organization = Console.ReadLine();
             Console.WriteLine("Enter the Directory for the Report to be Generated");
             string outputdir = Console.ReadLine();
+            Console.WriteLine("Enter GitHub UserName");
+            string git_user = Console.ReadLine();
+            Console.WriteLine("Enter GitHub PAT");
+            string git_pat = Console.ReadLine();
+
             string fileName = Organization + "_" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss-ffff");
 
             do
@@ -131,30 +137,26 @@ namespace graphqlimplementation
 
                 if (FirstTime == true)
                 {
-                    JsonResponse(queryObject, 1, fileName);
-                    JsonResponse(queryObjActivity, 2, fileName);
-                    JsonResponse(queryOrgObject, 3, fileName);
+                    JsonResponse(queryObject, 1, fileName , git_pat, git_user);
+                    JsonResponse(queryObjActivity, 2, fileName, git_pat, git_user);
+                    JsonResponse(queryOrgObject, 3, fileName, git_pat, git_user);
                 }
                 else
                 {
                     if (!string.IsNullOrEmpty(endCursor1))
                     {
-                        JsonResponse(queryObject, 1, fileName);
+                        JsonResponse(queryObject, 1, fileName, git_pat, git_user);
                     }
                     if (!string.IsNullOrEmpty(endCursor2))
                     {
-                        JsonResponse(queryObjActivity, 2, fileName);
+                        JsonResponse(queryObjActivity, 2, fileName, git_pat, git_user);
                     }
                     if (!string.IsNullOrEmpty(endCursor3))
                     {
-                        JsonResponse(queryOrgObject, 3, fileName);
+                        JsonResponse(queryOrgObject, 3, fileName, git_pat, git_user);
                     }
                 }
-                /*foreach (Object strobj in strjson)
-                {
-                    JsonResponse(strobj, i, fileName);
-                    i++;
-                }*/
+
                 FirstTime = false;
             } while (!string.IsNullOrEmpty(endCursor1) || !string.IsNullOrEmpty(endCursor2));
             ResponseModel input = new ResponseModel() { data = new response.Data() { search = new Search() { nodes = Q1UsersData, userCount = Q1UsersData.Count } } };
@@ -164,7 +166,8 @@ namespace graphqlimplementation
             input = new ResponseModel() { data = new response.Data() { search = new Search() { nodes = Q3UsersData, userCount = Q3UsersData.Count } } };
             jsonToCSV(JsonConvert.SerializeObject(input), 3, fileName, outputdir);
         }
-        public static async void JsonResponse(Object query, int sheetnumber, string filename)
+
+        public static async void JsonResponse(Object query, int sheetnumber, string filename, string git_pat, string git_user)
         {
             var httpClient = new HttpClient
             {
@@ -173,7 +176,7 @@ namespace graphqlimplementation
 
             httpClient.DefaultRequestHeaders.Add("User-Agent", "MyConsoleApp");
 
-            string basicValue = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{Configs.GitHubAccount}:{Configs.PersonalAccessToken}"));
+            string basicValue = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{git_user}:{git_pat}"));
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", basicValue);
 
             var httprequest = new HttpRequestMessage
