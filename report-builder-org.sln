@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "graphqlimplementation", "graphqlimplementation\graphqlimplementation.csproj", "{68EE4D9A-0FA5-413B-9561-321B27B884A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "report-builder-org", "report-builder-org\report-builder-org.csproj", "{68EE4D9A-0FA5-413B-9561-321B27B884A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
