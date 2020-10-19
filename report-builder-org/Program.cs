@@ -30,6 +30,8 @@ namespace graphqlimplementation
 
             Console.WriteLine("Enter the Organisation");
             string Organization = Console.ReadLine();
+            Console.WriteLine("Enter the Directory for the Report to be Generated");
+            string outputdir = Console.ReadLine();
             string fileName = Organization + "_" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss-ffff");
 
             do
@@ -155,12 +157,12 @@ namespace graphqlimplementation
                 }*/
                 FirstTime = false;
             } while (!string.IsNullOrEmpty(endCursor1) || !string.IsNullOrEmpty(endCursor2));
-            ResponseModel input = new ResponseModel() { data = new response.Data() { search = new Search() { nodes = Q1UsersData,userCount=Q1UsersData.Count } } };
-            jsonToCSV(JsonConvert.SerializeObject(input),1,fileName);
-            input = new ResponseModel() { data = new response.Data() { search = new Search() { nodes = Q2UsersData,userCount=Q2UsersData.Count } } };
-            jsonToCSV(JsonConvert.SerializeObject(input),2,fileName);
+            ResponseModel input = new ResponseModel() { data = new response.Data() { search = new Search() { nodes = Q1UsersData, userCount = Q1UsersData.Count } } };
+            jsonToCSV(JsonConvert.SerializeObject(input), 1, fileName, outputdir);
+            input = new ResponseModel() { data = new response.Data() { search = new Search() { nodes = Q2UsersData, userCount = Q2UsersData.Count } } };
+            jsonToCSV(JsonConvert.SerializeObject(input), 2, fileName, outputdir);
             input = new ResponseModel() { data = new response.Data() { search = new Search() { nodes = Q3UsersData, userCount = Q3UsersData.Count } } };
-            jsonToCSV(JsonConvert.SerializeObject(input), 3, fileName);
+            jsonToCSV(JsonConvert.SerializeObject(input), 3, fileName, outputdir);
         }
         public static async void JsonResponse(Object query, int sheetnumber, string filename)
         {
@@ -181,7 +183,7 @@ namespace graphqlimplementation
             };
             var response = httpClient.SendAsync(httprequest).Result;
             if (response.IsSuccessStatusCode)
-            {     
+            {
                 var responseString = await GetResponseContent(response);
                 if (responseString != null)
                 {
@@ -207,13 +209,13 @@ namespace graphqlimplementation
         }
 
 
-            public static async Task<string> GetResponseContent(HttpResponseMessage response)
-            {
-                var responseString = await response.Content.ReadAsStringAsync();
-                return responseString;
-            }
+        public static async Task<string> GetResponseContent(HttpResponseMessage response)
+        {
+            var responseString = await response.Content.ReadAsStringAsync();
+            return responseString;
+        }
 
-        public static void jsonToCSV(string jsonData, int sheetNumber, string filename)
+        public static void jsonToCSV(string jsonData, int sheetNumber, string filename, string outputdir)
         {
             string csvConverted = string.Empty;
             var obj = JObject.Parse(jsonData);
@@ -252,23 +254,22 @@ namespace graphqlimplementation
 
             csvConverted = csv.ToString();
             Console.WriteLine(csv);
-            
+
             string worksheetsName = "Sheet";
-               // string excelFilePath = @"D:\" + filename + ".xlsx";
-                
-                var excelFileInfo = new FileInfo(excelFilePath);
-                var excelTextFormat = new ExcelTextFormat();
-                excelTextFormat.DataTypes = new eDataTypes[] { eDataTypes.String, eDataTypes.String, eDataTypes.String, eDataTypes.String };
-                excelTextFormat.Delimiter = ',';
-                excelTextFormat.EOL = "\n";
+            string excelFilePath = outputdir + filename + ".xlsx";
+            var excelFileInfo = new FileInfo(excelFilePath);
+            var excelTextFormat = new ExcelTextFormat();
+            excelTextFormat.DataTypes = new eDataTypes[] { eDataTypes.String, eDataTypes.String, eDataTypes.String, eDataTypes.String };
+            excelTextFormat.Delimiter = ',';
+            excelTextFormat.EOL = "\n";
 
-                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-                using (ExcelPackage package = new ExcelPackage(excelFileInfo))
-                {
+            using (ExcelPackage package = new ExcelPackage(excelFileInfo))
+            {
 
-                    ExcelWorksheet worksheet = package.Workbook.Worksheets.Add(worksheetsName + sheetNumber);
-                    worksheet.Cells["A3"].LoadFromText(csvConverted, excelTextFormat, OfficeOpenXml.Table.TableStyles.Medium25, false);
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add(worksheetsName + sheetNumber);
+                worksheet.Cells["A3"].LoadFromText(csvConverted, excelTextFormat, OfficeOpenXml.Table.TableStyles.Medium25, false);
 
 
                 List<int> Columns2 = new List<int>
@@ -284,15 +285,9 @@ namespace graphqlimplementation
                      2,3,3,3
                  };
 
-                if (sheetNumber==1)
+                if (sheetNumber == 1)
                 {
                     worksheet.Name = "User_Details";
-                    
-                    //foreach (int col in Columns1)
-                    //{
-                    //    worksheet.DeleteColumn(col);
-                    //}
-
                     worksheet.Cells["B1"].Value = "UserCount";
                     worksheet.Cells["C1"].Value = Q1UsersData.Count;
                     worksheet.Cells["D3"].Value = "LastActive_Contribution";
@@ -301,7 +296,7 @@ namespace graphqlimplementation
 
                 if (sheetNumber == 2)
                 {
-                    foreach(int col in Columns2)
+                    foreach (int col in Columns2)
                     {
                         worksheet.DeleteColumn(col);
                     }
@@ -313,7 +308,7 @@ namespace graphqlimplementation
                     worksheet.Cells["B3"].Value = "LastActive_Contribution";
                     worksheet.Cells["C3"].Value = "LastContributed_Repository";
                     worksheet.Cells.AutoFitColumns();
-                    
+
                 }
 
                 if (sheetNumber == 3)
@@ -328,9 +323,9 @@ namespace graphqlimplementation
                     worksheet.Cells.AutoFitColumns();
                 }
                 package.Save();
-                }
             }
-        
-
+        }
     }
+
+    
 }
