@@ -281,7 +281,7 @@ namespace graphqlimplementation
                  };
                 List<int> Columns1 = new List<int>
                  {
-                     4,5,4
+                     5,5,5
                  };
                 List<int> Columns3 = new List<int>
                  {
@@ -290,6 +290,11 @@ namespace graphqlimplementation
 
                 if (sheetNumber == 1)
                 {
+                    foreach (int col in Columns1)
+                    {
+                        worksheet.DeleteColumn(col);
+                    }
+
                     worksheet.Name = "User_Details";
                     worksheet.Cells["B1"].Value = "UserCount";
                     worksheet.Cells["C1"].Value = Q1UsersData.Count;
