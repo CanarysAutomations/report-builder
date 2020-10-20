@@ -1,4 +1,4 @@
-# Get User and Organization Reports with GraphQL
+# Get User and Organization Reports 📈 with GraphQL
 
 ## Overview
   
