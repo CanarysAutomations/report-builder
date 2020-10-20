@@ -42,7 +42,7 @@ GitHub username and PAT are required for graphql to authenticate with GitHub and
 
    ![img](./images/report-window.png)
 
-   ![img](./images/report-sheet-1.png)
+   ![img](./images/report-sheet-1.PNG)
 
    ![img](./images/report-sheet-2.png)
 
