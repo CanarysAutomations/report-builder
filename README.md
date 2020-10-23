@@ -23,7 +23,7 @@ One of the great advantages is that, all the data you need can be accessed in a 
  
 ### Usage Instructions :memo:
 
-To learn how to setup and use the tool, click here.
+To learn how to setup and use the tool, click [here](https://github.com/CanarysAutomations/report-builder/wiki).
 
 ### Current Report Limitations :x: :x:
 
