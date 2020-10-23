@@ -3,9 +3,8 @@
 Using GraphQL queries, the application access the GitHub's **GraphQl API Endpoints** to create user and organization reports. The main user Input is considered to be the name of the organization. With this input, GraphQL queries are sent as a request to generate the response for the reports.
 
 ## Prerequisites
- 
- - GitHub Account
- - GitHub ID & PAT Token
+
+ - GitHub Account & PAT Token
 
 ## GraphQL
 
