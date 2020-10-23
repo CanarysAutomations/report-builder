@@ -7,9 +7,9 @@ Using GraphQL queries, the application access the GitHub's **GraphQl API Endpoin
  - GitHub Account
  - GitHub ID & PAT Token
 
-## GraphQl
+## GraphQL
 
-GraphQL is a query language for your api. With GraphQL, responses can be tailored to fit the requests which are sent. Also many resources can be fetched with a single response. Now many different programming languages support GraphQl implementations including C#, Erlang, Java, PHP etc.
+GraphQL is an open-source data query and manipulation language for APIs. With GraphQL, responses can be tailored to fit the requests which are sent. Also many resources can be fetched with a single response. Now many different programming languages support GraphQl implementations including C#, Erlang, Java, PHP etc.
 
 ## Why
 
