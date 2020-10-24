@@ -1,23 +1,25 @@
-# Get User and Organization Reports 📈 with GraphQL
+# Get User and Organization reports 📈 with GraphQL
  
-Using GraphQL queries, the application access the GitHub's **GraphQl API Endpoints** to create user and organization reports. The main user Input is considered to be the name of the organization. With this input, GraphQL queries are sent as a request to generate the response for the reports.
+The tool will help you get the details of **User**, **User activity** and **Organization details.** Using GraphQL queries, the application access the GitHub's **GraphQL API Endpoints** to create user and organization reports. The only input required is the name of the GitHub Organization. The Organization name is included with GraphQL queries as part of the request to generate the response for the reports.
 
-We have 3 queries to fetch **User**, **User activity** and **Organization data**. These queries are sent in a single request to generate the report based on the response received.
+We have 3 queries to fetch **User**, **User activity** and **Organization data**. Based on the response received, these queries are sent in a single request to generate the report.
 
-## Data Populated in the Report
+For ease of viewing and analyzing, the JSON response is formatted into excel data and attached to separate excel sheets.
+
+## Data populated in the report
 
 ### User
 
-- Email
-- Company
-- Login
-- Last Active Contribution.
+- email
+- company
+- login
+- last active contribution
 
 ### User Activity
 
-- Login
-- Last Active Contribution
-- Last Contributed Repository
+- login
+- last active contribution
+- last contributed repository
 
 ### Organization Details
 
@@ -30,7 +32,7 @@ GraphQL is an open-source data query and manipulation language for APIs. With Gr
 
 ## Why
 
-One of the great advantages is that, all the data you need can be accessed in a single request, however complicated it may be.
+One of the great benefits is that with a single request, all the data you need can be obtained, however complicated it may be.
 
 ## Application Uses
 
