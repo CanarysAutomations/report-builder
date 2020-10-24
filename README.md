@@ -28,7 +28,7 @@ For ease of viewing and analyzing, the JSON response is formatted into excel dat
 
 ## GraphQL
 
-GraphQL is an open-source data query and manipulation language for APIs. With GraphQL, it is possible to customise responses to match the requests that are submitted. With a single response, many resources can be retrieved. GraphQl implementations are provided by several distinct programming languages including C#, Erlang, Java, PHP etc.
+GraphQL is an open-source data query and manipulation language for APIs. With GraphQL, it is possible to customize responses to match the requests that are submitted. With a single response, many resources can be retrieved. GraphQL implementations are provided by several distinct programming languages including C#, Erlang, Java, PHP etc.
 
 ## Why
 
