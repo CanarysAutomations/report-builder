@@ -11,7 +11,7 @@ We have 3 queries to fetch **User**, **User activity** and **Organization data**
 - Email
 - Company
 - Login
-- Last Active Contribution. Captured Data is Time and date the last time user has made any contribution
+- Last Active Contribution.
 
 ### User Activity
 
