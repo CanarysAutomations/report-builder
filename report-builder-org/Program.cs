@@ -28,7 +28,7 @@ namespace graphqlimplementation
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Enter the Organisation");
+            Console.WriteLine("Enter the Organization");
             string Organization = Console.ReadLine();
             Console.WriteLine("Enter the Directory for the Report to be Generated");
             string outputdir = Console.ReadLine();
