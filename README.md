@@ -4,6 +4,26 @@ Using GraphQL queries, the application access the GitHub's **GraphQl API Endpoin
 
 We have 3 queries to fetch **User**, **User activity** and **Organization data**. These queries are sent in a single request to generate the report based on the response received.
 
+## Data Populated in the Report
+
+### User
+
+- Email
+- Company
+- Login
+- Last Active Contribution. Captured Data is Time and date the last time user has made any contribution
+
+### User Activity
+
+- Login
+- Last Active Contribution
+- Last Contributed Repository
+
+### Organization Details
+
+- email
+- login
+
 ## GraphQL
 
 GraphQL is an open-source data query and manipulation language for APIs. With GraphQL, responses can be tailored to fit the requests which are sent. Also many resources can be fetched with a single response. Many different programming languages support GraphQl implementations including C#, Erlang, Java, PHP etc.
