@@ -1,7 +1,9 @@
 ![.NET Core](https://github.com/CanarysAutomations/report-builder/workflows/.NET%20Core/badge.svg)
 
 # Get User and Organization Reports 📈 with GraphQL
- 
+
+## Overview
+
 The tool will help you get the details of **User**, **User activity** and **Organization details.** Using GraphQL queries, the application access the GitHub's **GraphQL API Endpoints** to create user and organization reports. The main user Input is considered to be name of the organization. With this input, GraphQL queries are sent as a request to generate the response for the reports.
 
 We have 3 queries to fetch **User**, **User activity** and **Organization data**. These queries are sent in a single request to generate the report based on the response received.
