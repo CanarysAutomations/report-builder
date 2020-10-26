@@ -1,26 +1,24 @@
 ![.NET Core](https://github.com/CanarysAutomations/report-builder/workflows/.NET%20Core/badge.svg)
 
 # Get User and Organization Reports 📈 with GraphQL
+ 
+The tool will help you get the details of **User**, **User activity** and **Organization details.** Using GraphQL queries, the application access the GitHub's **GraphQL API Endpoints** to create user and organization reports. The main user Input is considered to be name of the organization. With this input, GraphQL queries are sent as a request to generate the response for the reports.
+
+We have 3 queries to fetch **User**, **User activity** and **Organization data**. These queries are sent in a single request to generate the report based on the response received.
 
 ## Existing Challenges
 
 - When we need to search organization level data in GitHub, the data is presented like this
 
-[!img][./images/github-search-window]
+  [!img][./images/github-search-window.png]
 
-- To study and sort this data, requires a manual process to go through every page in github.
-- To review graphql reports online, very few tools are present to export the data in a excel file.
+- To study and sort this data, requires a manual process to go through every page in github
+- To review graphql reports online, very few tools are present to export the data in a excel file
 
 ### Tool's Advantages
 
 - Separates user and Organization data. Get the exact of the no.of users and Organization
 - Readily available report in an excel format
-
-## Overview
- 
-The tool will help you get the details of **User**, **User activity** and **Organization details.** Using GraphQL queries, the application access the GitHub's **GraphQL API Endpoints** to create user and organization reports. The main user Input is considered to be name of the organization. With this input, GraphQL queries are sent as a request to generate the response for the reports.
-
-We have 3 queries to fetch **User**, **User activity** and **Organization data**. These queries are sent in a single request to generate the report based on the response received.
 
 ## Data populated in the report
 
