@@ -46,7 +46,11 @@ One of the great benefits is that with a single request, all the data you need c
 ### Prerequisites
 
  - GitHub Account & PAT Token
- 
+
+### Download :arrow_down:
+
+Download the tool from [here](https://github.com/CanarysAutomations/report-builder/releases).
+
 ### Usage Instructions :memo:
 
 To learn how to setup and use the tool, click [here](https://github.com/CanarysAutomations/report-builder/wiki).
