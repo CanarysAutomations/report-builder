@@ -24,7 +24,7 @@ We have 3 queries to fetch **User**, **User activity** and **Organization data**
 
 ## Data populated in the report
 
-Below are the detals populated in the report.
+Below are the details populated in the report.
 
 |User| User Activity | Organization|
 |----|---------------|-------------|
