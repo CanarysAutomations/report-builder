@@ -6,19 +6,19 @@ The tool will help you get the details of **User**, **User activity** and **Orga
 
 We have 3 queries to fetch **User**, **User activity** and **Organization data**. These queries are sent in a single request to generate the report based on the response received.
 
-## Existing Challenges
+## Current Challenges
 
-- When we need to search organization level data in GitHub, the data is presented like this
+- When we need to check GitHub for organizational level data, the information is presented in this way
 
   ![img](./images/github-search-window.PNG)
 
-- To study and sort this data, requires a manual process to go through every page in github
-- To review graphql reports online, very few tools are present to export the data in a excel file
+- To study and sort this data, requires a manual process to go through every page in GitHub
+- Very few tools are present to export the data in an excel file to review graphql reports online.
 
-### Tool's Advantages
+### Advantages
 
-- Separates user and Organization data. Get the exact of the no.of users and Organization
-- Readily available report in an excel format
+- Separates user and Organization data. Get the precise number of users and Organization
+- Ready-to-read export in excel format
 
 ## Data populated in the report
 
