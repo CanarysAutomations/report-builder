@@ -10,12 +10,12 @@ We have 3 queries to fetch **User**, **User activity** and **Organization data**
 
 ## Current Challenges
 
-- When we need to check GitHub for organizational level data, the information is presented in this way
+- The data is presented in this way when we need to search GitHub for organisational level information
 
   ![img](./images/github-search-window.PNG)
 
 - To study and sort this data, requires a manual process to go through every page in GitHub
-- Very few tools are present to export the data in an excel file to review graphql reports online.
+- Very few tools are present to export the data in an excel file to review graphql reports online
 
 ### Advantages
 
