@@ -24,23 +24,11 @@ We have 3 queries to fetch **User**, **User activity** and **Organization data**
 
 ## Data populated in the report
 
-### User
+Below are the detals populated in the report.
 
-- Email
-- Company
-- Login
-- Last Active Contribution
-
-### User Activity
-
-- Login
-- Last Active Contribution
-- Last Contributed Repository
-
-### Organization Details
-
-- email
-- login
+|User| User Activity | Organization|
+|----|---------------|-------------|
+|<ul><li>email</li><li>company</li><li>login</li><li>last active contribution</li></ul> | <ul><li>login</li><li>last active contribution</li><li>last contributed repository</li></ul> | <ul><li>email</li><li>login</li></ul>|
 
 ## GraphQL
 
