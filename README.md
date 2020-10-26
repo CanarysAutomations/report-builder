@@ -10,7 +10,7 @@ We have 3 queries to fetch **User**, **User activity** and **Organization data**
 
 - When we need to search organization level data in GitHub, the data is presented like this
 
-  [!img][./images/github-search-window.png]
+  [!img](./images/github-search-window.PNG)
 
 - To study and sort this data, requires a manual process to go through every page in github
 - To review graphql reports online, very few tools are present to export the data in a excel file
