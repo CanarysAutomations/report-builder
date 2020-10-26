@@ -326,6 +326,7 @@ namespace graphqlimplementation
                         worksheet.DeleteColumn(col);
                     }
                     worksheet.Cells["B1"].Value = "Organization Count";
+					worksheet.Cells["B3"].Value = "Organization Name";
                     worksheet.Cells["C1"].Value = Q3UsersData.Count;
                     worksheet.Cells.AutoFitColumns();
                 }
