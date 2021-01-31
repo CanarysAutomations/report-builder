@@ -35,7 +35,7 @@ namespace graphqlimplementation
             Console.WriteLine("Enter GitHub UserName");
             string git_user = Console.ReadLine();
             Console.WriteLine("Enter GitHub PAT");
-            string git_pat = Console.ReadLine();
+            string git_pat = ReadPat();
 
             string fileName = Organization + "_" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss-ffff");
 
@@ -255,7 +255,7 @@ namespace graphqlimplementation
             var csv = string.Join("\n", csvRows);
 
             csvConverted = csv.ToString();
-            Console.WriteLine(csv);
+           // Console.WriteLine(csv);
 
             string worksheetsName = "Sheet";
             string excelFilePath = outputdir + filename + ".xlsx";
@@ -332,6 +332,39 @@ namespace graphqlimplementation
                 }
                 package.Save();
             }
+        }
+
+        public static string ReadPat()
+        {
+            string git_pat = "";
+            ConsoleKeyInfo info = Console.ReadKey(true);
+            while (info.Key != ConsoleKey.Enter)
+            {
+                if (info.Key != ConsoleKey.Backspace)
+                {
+                    Console.Write("*");
+                    git_pat += info.KeyChar;
+                }
+                else if (info.Key == ConsoleKey.Backspace)
+                {
+                    if (!string.IsNullOrEmpty(git_pat))
+                    {
+                        git_pat = git_pat.Substring(0, git_pat.Length - 1);
+                        
+                        int pos = Console.CursorLeft;
+                        
+                        Console.SetCursorPosition(pos - 1, Console.CursorTop);
+                        
+                        Console.Write(" ");
+                       
+                        Console.SetCursorPosition(pos - 1, Console.CursorTop);
+                    }
+                }
+                info = Console.ReadKey(true);
+            }
+
+            Console.WriteLine();
+            return git_pat;
         }
     }
 
