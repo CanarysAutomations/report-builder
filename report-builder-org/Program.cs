@@ -36,6 +36,7 @@ namespace graphqlimplementation
             string git_user = Console.ReadLine();
             Console.WriteLine("Enter GitHub PAT");
             string git_pat = ReadPat();
+            
 
             string fileName = Organization + "_" + DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss-ffff");
 
@@ -164,6 +165,9 @@ namespace graphqlimplementation
             jsonToCSV(JsonConvert.SerializeObject(input), 2, fileName, outputdir);
             input = new ResponseModel() { data = new response.Data() { search = new Search() { nodes = Q3UsersData, userCount = Q3UsersData.Count } } };
             jsonToCSV(JsonConvert.SerializeObject(input), 3, fileName, outputdir);
+
+            Console.WriteLine("Report Is Generated, Press any key to exit");
+            Console.Read();
         }
 
         public static async void JsonResponse(Object query, int sheetnumber, string filename, string git_pat, string git_user)
@@ -366,6 +370,9 @@ namespace graphqlimplementation
             Console.WriteLine();
             return git_pat;
         }
+
+        
+        
     }
 
     
