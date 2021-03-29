@@ -8,9 +8,9 @@ The tool will help you get the details of **User**, **User activity** and **Orga
 
 We have 3 queries to fetch **User**, **User activity** and **Organization data**. These queries are sent in a single request to generate the report based on the response received.
 
-## Current Challenges
+## :warning: Current Challenges
 
-- The data is presented in this way when we need to search GitHub for organisational level information
+- When we need to check GitHub for information at the organisational level, the data is presented in this way
 
   ![img](./images/github-search-window.PNG)
 
