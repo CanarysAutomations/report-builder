@@ -43,15 +43,15 @@ One of the great benefits is that with a single request, all the data you need c
  - As the data collected is the public record of GitHub, no special access is needed
  - You will see a summary of users and organizational level data from the excel report
 
-### Prerequisites
+### :mega: Prerequisites
 
  - GitHub Account & PAT Token
 
-### Download :arrow_down:
+### :arrow_down: Download 
 
 Download the tool from [here](https://github.com/CanarysAutomations/report-builder/releases).
 
-### Usage Instructions :memo:
+### :memo: Usage Instructions 
 
 To learn how to setup and use the tool, click [here](https://github.com/CanarysAutomations/report-builder/wiki).
 
